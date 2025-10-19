@@ -1,0 +1,7 @@
+
+7
+java:S1220""Move this file to a named package.8Ã¾ÇÔ”3
+U	java:S106'"9Replace this use of System.out or System.err by a logger.(®êó8Ô¾ÇÔ”3
+n
+java:S11723"LRemove these unused method parameters "nombre", "precio", "cantidadEnStock".(óÃòÚûÿÿÿÿ8Ó¾ÇÔ”3
+Z	java:S1064"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8åÉİÕ”3

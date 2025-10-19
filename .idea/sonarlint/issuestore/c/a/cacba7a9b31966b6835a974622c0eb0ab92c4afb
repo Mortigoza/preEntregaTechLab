@@ -1,0 +1,9 @@
+
+
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(…‰ºŒ8§ŠÄÕ”3
+‹
+java:S1319"iThe type of "productos" should be an interface such as "List" rather than the implementation "ArrayList".(Üé¶‚ûÿÿÿÿ8ãíÎÕ”3
+7
+java:S1220""Move this file to a named package.8§ŠÄÕ”3
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8”ˆ×³™3
