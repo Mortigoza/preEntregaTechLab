@@ -45,7 +45,18 @@ public class Main {
                         System.out.println("Los productos ingresados hasta el momento son: ");
                         productoService.listarProductos();
                     }
-                    case 3 -> productoService.buscarActualizarProducto();
+                    case 3 -> {
+                        System.out.print("Ingrese el ID del producto que desea actualizar: ");
+                        int idBuscado = entrada.nextInt();
+                        entrada.nextLine();
+                        Producto productoEncontrado = productoService.buscarPorId(idBuscado);
+                        if (productoEncontrado != null) {
+                            productoService.actualizarProducto(productoEncontrado, entrada);
+                        } else {
+                            System.out.println("No se encontró ningún producto con ID " + idBuscado);
+                        }
+
+                    }
                     case 4 -> {
                         System.out.println("Ingrese el ID del producto que desea eliminar.");
                         int id = entrada.nextInt();

@@ -3,6 +3,7 @@ package com.techlab.pre_entrega.servicios;
 import com.techlab.pre_entrega.entidades.Producto;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ProductoService {
     private ArrayList<Producto> listaProductos = new ArrayList<>();
@@ -19,7 +20,47 @@ public class ProductoService {
         }
     }
 
-    public void buscarActualizarProducto() {
+    public void actualizarProducto(Producto productoAActualizar, Scanner entrada) {
+        System.out.println("\n--- Producto a actualizar ---");
+        System.out.println(productoAActualizar.toString());
+        System.out.println("\n¿Qué desea actualizar?");
+        System.out.println("1) Precio \n" +
+                "2) Stock\n" +
+                "3) Cancelar");
+        try {
+            int opcionActualizar = entrada.nextInt();
+            entrada.nextLine();
+
+            switch (opcionActualizar) {
+                case 1 -> {
+                    System.out.print("Ingrese el nuevo precio: ");
+                    double nuevoPrecio = entrada.nextDouble();
+                    productoAActualizar.setPrecio(nuevoPrecio);
+                    System.out.println("Precio actualizado.");
+                }
+                case 2 -> {
+                    System.out.print("Ingrese el nuevo stock: ");
+                    int nuevoStock = entrada.nextInt();
+                    entrada.nextLine();
+                    productoAActualizar.setStock(nuevoStock);
+                    System.out.println("Stock actualizado.");
+                }
+                case 3 -> System.out.println("Retornando al menú principal.");
+                default -> System.out.println("Opción no válida.");
+            }
+        } catch (java.util.InputMismatchException e) {
+            System.out.println("Ingrese un valor numérico válido.");
+            entrada.nextLine();
+        }
+    }
+
+    public Producto buscarPorId(int idBuscado) {
+        for (Producto p : listaProductos) {
+            if (p.getIdProducto() == idBuscado) {
+                return p;
+            }
+        }
+        return null;
     }
 
     public void eliminarProductos(int id) {
