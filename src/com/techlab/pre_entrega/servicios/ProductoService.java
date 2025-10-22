@@ -7,6 +7,15 @@ import java.util.Scanner;
 
 public class ProductoService {
     private ArrayList<Producto> listaProductos = new ArrayList<>();
+
+    public ProductoService() {
+        Producto prod1 = new Producto("Gaseosa", 2000.00, 50);
+        this.listaProductos.add(prod1);
+        Producto prod2 = new Producto("Pan lactal", 2500.00, 10);
+        this.listaProductos.add(prod2);
+    }
+
+
     public void agregarProducto(Producto producto){
         this.listaProductos.add(producto);
     }
